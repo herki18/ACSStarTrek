@@ -1,0 +1,30 @@
+﻿<div ng-controller="CrewManifestController">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading clearfix" style="font-size: large;">
+            <div class="pull-left">
+                {{crewManifest.Name}}
+            </div>
+            <div class="pull-right">
+                <button class="btn btn-default" ng-click="open('lg', crewManifest.Crew)">Add and Remove Crew</button>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    <tr ng-repeat="person in crewManifest.Crew">
+                        <td class ="col-sm-2"><img ng-src="{{person.Icon.Url}}" width="180" height="180" /></td>
+                        <td class="col-sm-10">
+                            <h3>Description</h3>
+                            <div>
+                                {{person.Description}}
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
