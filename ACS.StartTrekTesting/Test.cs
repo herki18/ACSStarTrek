@@ -27,8 +27,6 @@ namespace ACS.StartTrekTesting
             var driver = new ChromeDriver(service, optn);
             //var driver = new ChromeDriver(options);
             
-            
-
 
             driver.Navigate().GoToUrl("http://localhost:64834/");
 
