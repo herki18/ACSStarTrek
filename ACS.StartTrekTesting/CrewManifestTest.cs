@@ -27,9 +27,10 @@ namespace ACS.StartTrekTesting
         [Test]
         public void Navigation_GoDoCrewManifestPage_ShowCrewManifestPage()
         {
+            //InjectLogger(_driver);
+            //InjectLogger(_driver);
+            _driver.Navigate().GoToUrl("https://www.president.ee/et/");
             
-            _driver.Navigate().GoToUrl("http://localhost:64834/");
-            InjectLogger(_driver);
             GetLoggs(_driver);    
             CollectLogsFromBrowser(_driver);
         }
@@ -43,12 +44,18 @@ namespace ACS.StartTrekTesting
 
         private void GetLoggs(IJavaScriptExecutor driver)
         {
-            var logs = driver.ExecuteScript(@"return store");
+            var logs = driver.ExecuteScript(@"return sessionStorage.loggs");
         }
 
         private void InjectLogger(IJavaScriptExecutor driver)
         {
-            driver.ExecuteScript("var store = []; var oldf = console.log; console.log = function(){ store.push(arguments); oldf.apply(console, arguments); };");
+            driver.ExecuteScript(@" sessionStorage.loggs = [];
+                                    var oldf = console.log; 
+		                            console.log = function()
+		                            { 
+			                            sessionStorage.loggs.push(arguments); 
+			                            oldf.apply(console, arguments); 
+		                            };");
         }
 
         private void CollectLogsFromBrowser(IJavaScriptExecutor driver)
