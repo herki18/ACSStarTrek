@@ -20,6 +20,7 @@ namespace ACS.StartTrekTesting
             service.LogPath = "chromedriver.log";
             service.EnableVerboseLogging = true;
             optn.AddExtension("extension.crx");
+            
             _driver = new ChromeDriver(service, optn);
         }
 
@@ -29,9 +30,9 @@ namespace ACS.StartTrekTesting
         {
             //InjectLogger(_driver);
             //InjectLogger(_driver);
-            _driver.Navigate().GoToUrl("https://www.president.ee/et/");
+            _driver.Navigate().GoToUrl("localhost:64834");
             
-            GetLoggs(_driver);    
+            //GetLoggs(_driver);    
             CollectLogsFromBrowser(_driver);
         }
 
@@ -44,7 +45,8 @@ namespace ACS.StartTrekTesting
 
         private void GetLoggs(IJavaScriptExecutor driver)
         {
-            var logs = driver.ExecuteScript(@"return sessionStorage.loggs");
+            //var logs = driver.ExecuteScript(@"return window.JSLogCollector ?  window.JSLogCollector.pump() : [];");
+            var logs = driver.ExecuteScript(@"return window.JSLogCollector.pump();");
         }
 
         private void InjectLogger(IJavaScriptExecutor driver)
@@ -60,7 +62,9 @@ namespace ACS.StartTrekTesting
 
         private void CollectLogsFromBrowser(IJavaScriptExecutor driver)
         {
-            var errors = driver.ExecuteScript("return window.JSErrorCollector_errors ? window.JSErrorCollector_errors.pump() : [];");
+            var errors = driver.ExecuteScript(@"return window.JSLogCollector ?  window.JSLogCollector.pump() : [];");
+            
+            //var errors = driver.ExecuteScript("return window.JSErrorCollector_errors ? window.JSErrorCollector_errors.pump() : [];");
 
             var collection = errors as ReadOnlyCollection<object>;
             foreach (var item in collection)
