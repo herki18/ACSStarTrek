@@ -15,7 +15,7 @@
             vm.originalProduct = angular.copy(data);
         });
 
-        tere
+        
 
         $scope.items = [];
 

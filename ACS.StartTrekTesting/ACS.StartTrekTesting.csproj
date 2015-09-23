@@ -57,11 +57,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrewManifestSpec.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrewManifestSpec.feature</DependentUpon>
+    </Compile>
+    <Compile Include="CrewManifestSteps.cs" />
     <Compile Include="CrewManifestTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="CrewManifestSpec.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CrewManifestSpec.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
