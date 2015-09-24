@@ -72,13 +72,15 @@ namespace ACS.StartTrekTesting
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 4
- testRunner.Given("You have web page address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("the {Crew Manifest} is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
- testRunner.And("testing something", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.When("the {Crew Manifest} is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 6
- testRunner.When("I go there", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Then("the {Crew Manifest} should be Star Trek", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 7
- testRunner.Then("Page should be CrewManifest", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("the {Add and Remove Crew} button is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+    testRunner.And("the {number of crew displayed} should be {number = 3}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

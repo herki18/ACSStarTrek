@@ -7,7 +7,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace ACS.StartTrekTesting
 {
-    [TestFixture]
+    //[TestFixture]
     public class CrewManifestTest
     {
         private ChromeDriver _driver;

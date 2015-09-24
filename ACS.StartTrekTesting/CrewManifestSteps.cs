@@ -1,33 +1,57 @@
-﻿using TechTalk.SpecFlow;
+﻿using ACS.TestCore;
+using NUnit.Framework;
+using OpenQA.Selenium;
+using Protractor;
+using TechTalk.SpecFlow;
 
 namespace ACS.StartTrekTesting
 {
     [Binding]
-    public sealed class CrewManifestSteps
+    public sealed class CrewManifestSteps : PageObject
     {
-        [Given(@"You have web page address")]
-        public void GivenYouHaveWebPageAddress()
+        [Before]
+        public void Setup()
         {
-            ScenarioContext.Current.Pending();
+           
         }
 
-        [Given(@"testing something")]
-        public void GivenTestingSomething()
+        [TearDown]
+        public void TearDown()
         {
-            ScenarioContext.Current.Pending();
+            Dispose();
         }
 
-
-        [When(@"I go there")]
-        public void WhenIGoThere()
+        [Given(@"the \{Crew Manifest} is open")]
+        public void GivenTheCrewManifestIsOpen()
         {
-            ScenarioContext.Current.Pending();
+            Engine.GoToUrl("localhost:64834");
+            Engine.CollectLogsFromBrowser();
         }
 
-        [Then(@"Page should be CrewManifest")]
-        public void ThenPageShouldBeCrewManifest()
+        [When(@"the \{Crew Manifest} is selected")]
+        public void WhenTheCrewManifestIsSelected()
         {
-            ScenarioContext.Current.Pending();
+            Assert.AreEqual("http://localhost:64834/", Engine.NgWebDriver.Url);
+            Engine.CollectLogsFromBrowser();
+        }
+
+        [Then(@"the \{Crew Manifest} should be Star Trek")]
+        public void ThenTheCrewManifestShouldBeStarTrek()
+        {
+            Assert.AreEqual("Star Trek", Engine.FindElementById("Page Title"));
+            Engine.CollectLogsFromBrowser();
+        }
+
+        [Then(@"the \{Add and Remove Crew} button is present")]
+        public void ThenTheAddAndRemoveCrewButtonIsPresent()
+        {
+            Engine.CollectLogsFromBrowser();
+        }
+
+        [Then(@"the \{number of crew displayed} should be \{number = (.*)}")]
+        public void ThenTheNumberOfCrewDisplayedShouldBeNumber(int p0)
+        {
+            Engine.CollectLogsFromBrowser();
         }
 
     }
