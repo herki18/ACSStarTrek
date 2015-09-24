@@ -1,6 +1,7 @@
 ﻿using ACS.TestCore;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
 using Protractor;
 using TechTalk.SpecFlow;
 
@@ -45,12 +46,14 @@ namespace ACS.StartTrekTesting
         [Then(@"the \{Add and Remove Crew} button is present")]
         public void ThenTheAddAndRemoveCrewButtonIsPresent()
         {
+            Assert.AreEqual(true, Engine.NgWebDriver.FindElement(By.Id("AddandRemoveCrew")).Enabled);
             Engine.CollectLogsFromBrowser();
         }
 
         [Then(@"the \{number of crew displayed} should be \{number = (.*)}")]
         public void ThenTheNumberOfCrewDisplayedShouldBeNumber(int p0)
         {
+            //Assert.AreEqual(3, Engine.NgWebDriver.TakeScreenshot()`FindElement(By.Id()));
             Engine.CollectLogsFromBrowser();
         }
 
