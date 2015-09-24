@@ -19,6 +19,7 @@ namespace ACS.StartTrekTesting
             var service = ChromeDriverService.CreateDefaultService();
             service.LogPath = "chromedriver.log";
             service.EnableVerboseLogging = true;
+            
             optn.AddExtension("extension.crx");
 
             _driver = new ChromeDriver(service, optn);
