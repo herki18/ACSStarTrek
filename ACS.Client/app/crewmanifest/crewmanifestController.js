@@ -15,7 +15,9 @@
             vm.originalProduct = angular.copy(data);
         });
 
+        console.error("hi");
         
+        //ThrowException
 
         $scope.items = [];
 

@@ -79,7 +79,18 @@ namespace ACS.TestCore
                     var errorObject = item as Dictionary<string, object>;
                     foreach (var field in errorObject)
                     {
-                        Console.WriteLine(field.Key + " - " + field.Value);
+                        if (field.Value.GetType() == typeof (Dictionary<string,object>))
+                        {
+                            var innerItem = field.Value as Dictionary<string, object>;
+                            foreach (var inner in innerItem)
+                            {
+                                Console.WriteLine(inner.Key + " - " + inner.Value);
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine(field.Key + " - " + field.Value);
+                        }
                     }
                     Console.WriteLine("-------------------");
                 }

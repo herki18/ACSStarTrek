@@ -29,6 +29,7 @@ namespace ACS.StartTrekTesting
             Engine.CollectLogsFromBrowser();
         }
 
+
         [When(@"the \{Crew Manifest} is selected")]
         public void WhenTheCrewManifestIsSelected()
         {
