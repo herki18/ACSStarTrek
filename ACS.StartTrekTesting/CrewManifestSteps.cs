@@ -1,8 +1,8 @@
-﻿using ACS.TestCore;
+﻿using System.Net.Http;
+using ACS.TestCore;
+using Microsoft.Owin.Hosting;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.Extensions;
-using Protractor;
 using TechTalk.SpecFlow;
 
 namespace ACS.StartTrekTesting
@@ -10,10 +10,13 @@ namespace ACS.StartTrekTesting
     [Binding]
     public sealed class CrewManifestSteps : PageObject
     {
+         
+
         [Before]
         public void Setup()
         {
-           
+            
+
         }
 
         [TearDown]
@@ -26,6 +29,7 @@ namespace ACS.StartTrekTesting
         public void GivenTheCrewManifestIsOpen()
         {
             Engine.GoToUrl("localhost:64834");
+
             Engine.CollectLogsFromBrowser();
         }
 

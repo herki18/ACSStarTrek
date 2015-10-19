@@ -8,8 +8,13 @@ namespace ACS.TestCore
 
         protected PageObject()
         {
+        }
+
+        protected void Initialize()
+        {
             Engine = new TFDriver();
         }
+        
 
         public void Dispose()
         {
