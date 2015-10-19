@@ -1,8 +1,4 @@
-﻿using System.Net.Http;
-using ACS.TestCore;
-using Microsoft.Owin.Hosting;
-using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
 
 namespace ACS.StartTrekTesting
@@ -16,7 +12,6 @@ namespace ACS.StartTrekTesting
         public void Setup()
         {
             
-
         }
 
         [TearDown]
