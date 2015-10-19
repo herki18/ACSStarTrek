@@ -11,7 +11,7 @@ namespace ACS.StartTrekTesting
 {
     public class CrewManifestsPageObject : PageObject
     {
-        string baseAddress = "http://localhost:64821/";
+        string baseAddress = "http://localhost:64828/";
 
         public CrewManifestsPageObject()
         {
