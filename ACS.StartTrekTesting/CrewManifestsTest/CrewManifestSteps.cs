@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
 
-namespace ACS.StartTrekTesting
+namespace ACS.StartTrekTesting.CrewManifestsTest
 {
     [Binding]
     public sealed class CrewManifestSteps : CrewManifestsPageObject

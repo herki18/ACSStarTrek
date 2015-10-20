@@ -47,13 +47,15 @@ namespace ACS.TestCore
 
             if (_isLocal)
             {
-                WebDriver = new ChromeDriver(options);
+               WebDriver = new ChromeDriver(ChromeDriverService.CreateDefaultService(), options, TimeSpan.FromSeconds(120));
+               WebDriver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(10));
             }
             else
             {
                 DesiredCapabilities capabilities = new DesiredCapabilities();
                 capabilities.SetCapability(ChromeOptions.Capability, options);
-                WebDriver = new RemoteWebDriver(new Uri(""), DesiredCapabilities.Chrome());
+                WebDriver = new RemoteWebDriver(new Uri(""), DesiredCapabilities.Chrome(), TimeSpan.FromSeconds(120));
+                WebDriver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(10));
             }
 
             NgWebDriver = new NgWebDriver(WebDriver);

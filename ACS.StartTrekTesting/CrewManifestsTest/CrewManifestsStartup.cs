@@ -3,10 +3,9 @@ using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
 using Owin;
 
-
-namespace ACS.StartTrekTesting
+namespace ACS.StartTrekTesting.CrewManifestsTest
 {
-    public class Startup
+    public class CrewManifestsStartup
     {
         public void Configuration(IAppBuilder appBuilder)
         {
@@ -30,7 +29,7 @@ namespace ACS.StartTrekTesting
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional}
+                defaults: new { id = RouteParameter.Optional }
                 );
 
             appBuilder.UseWebApi(config);

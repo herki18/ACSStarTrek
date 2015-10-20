@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using ServiceApi.Models;
 
-namespace ACS.StartTrekTesting
+namespace ACS.StartTrekTesting.CrewManifestsTest
 {
     public class CrewManifestsController : ApiController
     {
         // GET: api/CrewManifests
         public CrewManifestModel Get()
         {
-            return new CrewManifestModel();
+            return new CrewManifestModel
+            {
+                Name = "Ship",
+                Crew = new List<CrewMemberModel>() { new CrewMemberModel { Description = "Tere", Name = "Hallo", FirstUrl = ""} }
+            };
         }
 
         // POST: api/CrewManifests

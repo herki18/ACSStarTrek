@@ -27,6 +27,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ACS.Client", "http://localh
 		Release.AspNetCompiler.Debug = "False"
 		SlnRelativePath = "ACS.Client\"
 		DefaultWebSiteLanguage = "Visual C#"
+		StartServerOnDebug = "false"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACS.TestCore", "ACS.TestCore\ACS.TestCore.csproj", "{2DC837A0-9414-420F-86CE-CA570B2DA16E}"

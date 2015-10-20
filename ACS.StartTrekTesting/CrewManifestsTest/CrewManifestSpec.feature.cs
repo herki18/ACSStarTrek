@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace ACS.StartTrekTesting
+namespace ACS.StartTrekTesting.CrewManifestsTest
 {
     using TechTalk.SpecFlow;
     

@@ -15,7 +15,7 @@
             vm.originalProduct = angular.copy(data);
         });
 
-        console.error("hi");
+        console.error("hi there");
         
         //ThrowException
 
