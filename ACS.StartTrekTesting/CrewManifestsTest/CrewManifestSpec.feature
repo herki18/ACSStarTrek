@@ -6,4 +6,4 @@ Scenario: Visit Home Page
     Then the {Crew Manifest} should be Star Trek
     And the {Add and Remove Crew} button is present
     And the {number of crew displayed} should be {number = 3}
-	
+

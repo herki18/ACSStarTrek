@@ -6,10 +6,6 @@ namespace ACS.TestCore
     {
         public TFDriver Engine { get; private set; }
 
-        protected PageObject()
-        {
-        }
-
         protected void Initialize()
         {
             Engine = new TFDriver();
